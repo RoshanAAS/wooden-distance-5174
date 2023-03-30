@@ -1,6 +1,6 @@
 import React from "react";
 // import { NavLink } from 'react-router-dom';
-import { Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftElement, Text ,Box,Image} from "@chakra-ui/react";
 import "../pages/Navbar.css";
 
 import {
@@ -10,21 +10,37 @@ import {
 } from "react-icons/hi2";
 import { IoIosHeartEmpty } from "react-icons/io";
 import MiniNavbar from "../Components/MiniNavbar";
+import { extendTheme } from '@chakra-ui/react'
+
+const breakpoints = {
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
+}
+const theme = extendTheme({ breakpoints })
+
+
+
+
+
+
 export const Navbar = () => {
+  
   return (
     <>
        <MiniNavbar/>
-      <div className="nav-container">
+      <Box w={theme} className="nav-container">
         <div className="logo">
-          <img
-            //    boxSize='100px'
+          <Image
             width="55px"
             src="https://s.yimg.com/fz/api/res/1.2/Mg8BU.qyWq14hqkxr86nfw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI2MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/88485e2c-b94e-3589-b5cc-f911bca0be47/t_500x300"
             alt="logo"
           />
         </div>
 
-        <div className="menu-container">
+        <Box w={theme} className="menu-container">
           <ul>
             <li>
               <Text color="#434757" fontSize="sm" as="b">
@@ -57,11 +73,11 @@ export const Navbar = () => {
               </Text>
             </li>
           </ul>
-        </div>
+        </Box>
 
         {/* serch part of nav */}
 
-        <div className="search-bar-icons">
+        <Box w={theme} className="search-bar-icons">
           <div>
             <InputGroup>
               <InputLeftElement
@@ -71,7 +87,7 @@ export const Navbar = () => {
               />
               <Input
                 variant="filled"
-                width={330}
+                width={theme}
                 type="text"
                 placeholder="Search Product,Brands and more"
               />
@@ -95,10 +111,10 @@ export const Navbar = () => {
               Bag
             </Text>
           </div>
-        </div>
+        </Box>
 
         
-      </div>
+      </Box>
     </>
   );
 };
