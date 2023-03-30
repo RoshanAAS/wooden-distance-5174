@@ -26,19 +26,31 @@ import {
 import { AccordionSlid } from "./AccordionSlid";
 
 import React from "react";
+import { extendTheme } from '@chakra-ui/react'
 
 function MiniNavbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
+  const breakpoints = {
+    sm: '30em',
+    md: '48em',
+    lg: '62em',
+    xl: '80em',
+    '2xl': '96em',
+  }
+  const theme = extendTheme({ breakpoints })
+
   return (
-    <div className="drawer">
+    <Box w={theme} className="drawer">
       <div
         style={{
           display: "Flex",
           alignItems: "center",
-          border: "1px solid red",
           justifyContent: "space-between",
+          boxShadow:'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'
+         
+        
         }}
       >
         <Button
@@ -61,12 +73,12 @@ function MiniNavbar() {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             alignItems: "center",
             width: "70%",
           }}
         >
-          <div>
+          <Box w={theme}>
             <InputGroup>
               <InputLeftElement
                 pointerEvents="none"
@@ -82,7 +94,7 @@ function MiniNavbar() {
                 placeholder="Search Product,Brands and more"
               />
             </InputGroup>
-          </div>
+          </Box>
           <div>
             <HiOutlineUser />
           </div>
@@ -138,7 +150,7 @@ function MiniNavbar() {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    </div>
+    </Box>
   );
 }
 export default MiniNavbar;
