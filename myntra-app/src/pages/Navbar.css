@@ -7,6 +7,13 @@
     justify-content:space-around;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: fixed;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    left: 0px;
+    z-index:10;
+    background-color: white;
 }
 
 @media only screen and (min-width:100px) and (max-width:800px) {
@@ -14,13 +21,39 @@
         display: none;
     }
     .TextHeading{
-       text-align: center;  
+       text-align: center; 
+       margin-top: 10px; 
     }
+    /* .auto-play{
+        display:none;
+    } */
+    .categories-hidden{
+        display:none;
+    }
+    .TextHeading-ONE{
+        display: none;
+     }
+     .footer-page{
+        display: none;
+     }
     
 }
 @media only screen and (min-width:800px)  and (max-width:16000px){
     .drawer{
         display: none;
+    }
+    .categori-slid{
+        display:none;
+    }
+    .TextHeading{
+         
+        margin: 50px 0px 0px 35px; 
+     }
+     .TextHeading-ONE{
+        margin:50px 0px 0px 35px ;
+     }
+     .auto-play{
+        margin-top: 130px;
     }
 }
 
