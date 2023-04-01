@@ -1,7 +1,15 @@
 import React from "react";
 // import { NavLink } from 'react-router-dom';
-import { Input, InputGroup, InputLeftElement, Text ,Box,Image} from "@chakra-ui/react";
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Text,
+  Box,
+  Image,
+} from "@chakra-ui/react";
 import "../pages/Navbar.css";
+import Login from "./Login";
 
 import {
   HiOutlineShoppingBag,
@@ -10,34 +18,31 @@ import {
 } from "react-icons/hi2";
 import { IoIosHeartEmpty } from "react-icons/io";
 import MiniNavbar from "../Components/MiniNavbar";
-import { extendTheme } from '@chakra-ui/react'
+import { Link } from "react-router-dom";
+import { extendTheme } from "@chakra-ui/react";
 
 const breakpoints = {
-  sm: '30em',
-  md: '48em',
-  lg: '62em',
-  xl: '80em',
-  '2xl': '96em',
-}
-const theme = extendTheme({ breakpoints })
-
-
-
-
-
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+};
+const theme = extendTheme({ breakpoints });
 
 export const Navbar = () => {
-  
   return (
     <>
-       <MiniNavbar/>
+      <MiniNavbar />
       <Box w={theme} className="nav-container">
         <div className="logo">
-          <Image
-            width="55px"
-            src="https://s.yimg.com/fz/api/res/1.2/Mg8BU.qyWq14hqkxr86nfw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI2MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/88485e2c-b94e-3589-b5cc-f911bca0be47/t_500x300"
-            alt="logo"
-          />
+          <Link to="/">
+            <Image
+              width="55px"
+              src="https://s.yimg.com/fz/api/res/1.2/Mg8BU.qyWq14hqkxr86nfw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI2MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/88485e2c-b94e-3589-b5cc-f911bca0be47/t_500x300"
+              alt="logo"
+            />
+          </Link>
         </div>
 
         <Box w={theme} className="menu-container">
@@ -93,27 +98,26 @@ export const Navbar = () => {
               />
             </InputGroup>
           </div>
-          <div >
+          <div>
             <HiOutlineUser className="icon-profile-bag-wishlist" />
-            <Text color="#434757" fontSize="sm" as="b">
-              Profile
-            </Text>
+            <Login />
+            {/* <Text color="#434757" fontSize="sm" as="b"> */}
+            {/* Profile */}
+            {/* </Text> */}
           </div>
-          <div >
+          <div>
             <IoIosHeartEmpty className="icon-profile-bag-wishlist" />
             <Text color="#434757" fontSize="sm" as="b">
               Wishlist
             </Text>
           </div>
-          <div >
-            <HiOutlineShoppingBag style={{marginLeft:'5px'}} />
+          <div>
+            <HiOutlineShoppingBag style={{ marginLeft: "5px" }} />
             <Text color="#434757" fontSize="sm" as="b">
               Bag
             </Text>
           </div>
         </Box>
-
-        
       </Box>
     </>
   );

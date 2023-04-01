@@ -1,0 +1,22 @@
+.footer-page{
+    width: 100%;
+    background-color: #fafbfc;
+    margin-top: 30px;
+    padding:25px
+}
+.footer-container{
+    width: 70%;
+    margin:auto;
+    margin-top: 28px;
+    display: flex;
+}
+ul{
+    list-style: none;
+    font-size: smaller;
+    margin-top: 10px;
+    color:gray
+}
+.footer-end{
+    width: 70%;  
+    margin:auto
+}
