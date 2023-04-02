@@ -11,14 +11,10 @@ import {
   Text,
   Heading,
 } from "@chakra-ui/react";
-// import { useState } from "react";
-// import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { LoginForm } from "../Components/LoginForm";
 function Login() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const [show, setShow] = useState(false);
-  // const handleClick = () => setShow(!show);
 
   return (
     <>
@@ -39,7 +35,7 @@ function Login() {
             <Heading style={{ margin: "25px 0px 20px 0px" }} size="md">
               Login
             </Heading>
-            <LoginForm/>
+            <LoginForm onclose={onClose}/>
           </ModalBody>
 
           <ModalFooter>
