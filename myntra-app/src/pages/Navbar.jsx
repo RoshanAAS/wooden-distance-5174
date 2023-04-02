@@ -7,9 +7,11 @@ import {
   Text,
   Box,
   Image,
+ 
 } from "@chakra-ui/react";
 import "../pages/Navbar.css";
 import Login from "./Login";
+
 
 import {
   HiOutlineShoppingBag,
@@ -20,6 +22,8 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import MiniNavbar from "../Components/MiniNavbar";
 import { Link } from "react-router-dom";
 import { extendTheme } from "@chakra-ui/react";
+import { useContext } from "react";
+import { AuthContex } from "./AuthContexProvider";
 
 const breakpoints = {
   sm: "30em",
@@ -31,6 +35,7 @@ const breakpoints = {
 const theme = extendTheme({ breakpoints });
 
 export const Navbar = () => {
+  const {Logout,isAuth}=useContext(AuthContex)
   return (
     <>
       <MiniNavbar />
@@ -49,7 +54,7 @@ export const Navbar = () => {
           <ul>
             <li>
               <Text color="#434757" fontSize="sm" as="b">
-                MEN
+               <Link to='/mens'>MEN</Link> 
               </Text>
             </li>
             <li>
@@ -117,6 +122,11 @@ export const Navbar = () => {
               Bag
             </Text>
           </div>
+           {isAuth?
+           <div>
+            <Image onClick={()=> Logout("")} style={{backgroundColor:"white",marginLeft:'10px'}} src='https://www.clipartkey.com/mpngs/m/20-203483_transparent-buttons-clipart-logout-icon-black.png' width='25px' alt='logout'/>
+         
+           </div>:''}
         </Box>
       </Box>
     </>
